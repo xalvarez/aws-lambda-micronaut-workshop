@@ -18,10 +18,10 @@ public class GitHubService {
     public GitHubClient gitHubClient;
 
     @Value("${github.token}")
-    private String gitHubToken;
+    public String gitHubToken;
 
     @Value("${github.userAgent}")
-    private String userAgent;
+    public String userAgent;
 
     public String getUsername() {
         String authorization = "Bearer " + gitHubToken;
