@@ -14,10 +14,10 @@ public class GitHubService {
             "}";
 
     @Inject
-    private GitHubClient gitHubClient;
+    public GitHubClient gitHubClient;
 
     @Inject
-    private GitHubConfiguration gitHubConfiguration;
+    public GitHubConfiguration gitHubConfiguration;
 
     public String getUsername() {
         String authorization = "Bearer " + gitHubConfiguration.getToken();

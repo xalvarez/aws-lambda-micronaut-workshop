@@ -11,7 +11,7 @@ public class ExampleController {
     private static final Logger LOG = LoggerFactory.getLogger(ExampleController.class);
 
     @Inject
-    private GitHubService gitHubService;
+    public GitHubService gitHubService;
 
     @Get("/ping")
     public String index() {

@@ -12,12 +12,12 @@ public class GitHubResponse {
     }
 
     @Data
-    private class GitHubData {
+    private static class GitHubData {
         private Viewer viewer;
     }
 
     @Data
-    private class Viewer {
+    private static class Viewer {
         private String login;
     }
 }

@@ -1,17 +1,22 @@
 package aws.lambda.micronaut.workshop;
 
 import io.micronaut.context.annotation.ConfigurationProperties;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.validation.constraints.NotBlank;
 
-@ConfigurationProperties("github")
-public interface GitHubConfiguration {
-    @NotBlank
-    String getToken();
+@ConfigurationProperties(value = "github", cliPrefix = "github")
+@Getter
+@Setter
+public class GitHubConfiguration {
 
     @NotBlank
-    String getApiUrl();
+    private String token;
 
     @NotBlank
-    String getUserAgent();
+    private String apiUrl;
+
+    @NotBlank
+    private String userAgent;
 }
