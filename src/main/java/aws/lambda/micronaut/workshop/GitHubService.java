@@ -1,6 +1,7 @@
 package aws.lambda.micronaut.workshop;
 
 import io.micronaut.context.annotation.Prototype;
+import io.micronaut.context.annotation.Value;
 
 import javax.inject.Inject;
 
@@ -16,11 +17,14 @@ public class GitHubService {
     @Inject
     public GitHubClient gitHubClient;
 
-    @Inject
-    public GitHubConfiguration gitHubConfiguration;
+    @Value("${github.token}")
+    private String gitHubToken;
+
+    @Value("${github.userAgent}")
+    private String userAgent;
 
     public String getUsername() {
-        String authorization = "Bearer " + gitHubConfiguration.getToken();
-        return gitHubClient.fetchUsername(authorization, gitHubConfiguration.getUserAgent(), USER_QUERY).getUsername();
+        String authorization = "Bearer " + gitHubToken;
+        return gitHubClient.fetchUsername(authorization, userAgent, USER_QUERY).getUsername();
     }
 }

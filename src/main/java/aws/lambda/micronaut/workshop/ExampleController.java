@@ -20,6 +20,6 @@ public class ExampleController {
 
     @Get("/hello-github")
     public String helloGitHub() {
-        return "Hello " + gitHubService.getUsername();
+        return "{\"greeting\": \"Hello " + gitHubService.getUsername() + "!\"}";
     }
 }
