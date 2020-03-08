@@ -1,4 +1,4 @@
-package aws.lambda.micronaut.workshop;
+package aws.lambda.micronaut.workshop.github;
 
 import io.micronaut.http.annotation.Header;
 import io.micronaut.http.annotation.Post;

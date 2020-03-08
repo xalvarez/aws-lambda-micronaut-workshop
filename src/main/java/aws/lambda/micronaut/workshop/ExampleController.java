@@ -1,8 +1,10 @@
 package aws.lambda.micronaut.workshop;
 
+import aws.lambda.micronaut.workshop.github.GitHubService;
+import io.micronaut.http.annotation.Controller;
+import io.micronaut.http.annotation.Get;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import io.micronaut.http.annotation.*;
 
 import javax.inject.Inject;
 
