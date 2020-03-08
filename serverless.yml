@@ -8,6 +8,8 @@ provider:
   logRetentionInDays: 30
   logs:
     restApi: true
+  environment:
+    GITHUB_TOKEN: ${env:GITHUB_TOKEN}
 
 package:
   artifact: build/function.zip
