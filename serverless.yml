@@ -1,0 +1,21 @@
+service: awsLambdaMicronautWorkshop
+
+provider:
+  name: aws
+  runtime: provided
+  region: eu-central-1
+  endpointType: regional
+  logRetentionInDays: 30
+  logs:
+    restApi: true
+
+package:
+  artifact: build/function.zip
+
+functions:
+  helloWorld:
+    handler: not.used.in.provided
+    events:
+      - http:
+          path: /{proxy+}
+          method: ANY

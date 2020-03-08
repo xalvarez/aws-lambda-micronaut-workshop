@@ -1,13 +1,22 @@
-Thumbs.db
-.DS_Store
-.gradle
-build/
-target/
-out/
+# Hidden files and folders
+.*
+!.gitignore
+!.github
+!.mvn
+!.dependabot
+
+# npm
+node_modules
+
+# IntelliJ IDEA
 .idea
 *.iml
 *.ipr
 *.iws
-.project
-.settings
-.classpath
+
+# Package Files
+*.jar
+
+target
+build
+.serverless
