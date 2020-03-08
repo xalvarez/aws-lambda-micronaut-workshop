@@ -1,10 +1,15 @@
 import static org.gradle.api.JavaVersion.VERSION_11
 
+buildscript {
+    ext {
+        lombokVersion = '1.18.12'
+    }
+}
+
 plugins {
     id "com.github.johnrengelman.shadow" version "5.2.0"
     id "application"
     id "net.ltgt.apt-eclipse" version "0.21"
-    id "io.freefair.lombok" version "4.1.6"
 }
 
 version "0.1"
@@ -20,6 +25,9 @@ configurations {
 }
 
 dependencies {
+    compileOnly "org.projectlombok:lombok:$lombokVersion"
+    annotationProcessor "org.projectlombok:lombok:$lombokVersion"
+
     annotationProcessor platform("io.micronaut:micronaut-bom:$micronautVersion")
     annotationProcessor "io.micronaut:micronaut-graal"
     annotationProcessor "io.micronaut:micronaut-inject-java"

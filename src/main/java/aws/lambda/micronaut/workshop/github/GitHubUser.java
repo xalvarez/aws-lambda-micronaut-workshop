@@ -1,4 +1,4 @@
-package aws.lambda.micronaut.workshop;
+package aws.lambda.micronaut.workshop.github;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
