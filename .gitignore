@@ -16,6 +16,7 @@ node_modules
 
 # Package Files
 *.jar
+!gradle-wrapper.jar
 
 target
 build

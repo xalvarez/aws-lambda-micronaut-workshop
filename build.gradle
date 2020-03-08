@@ -4,8 +4,6 @@ plugins {
     id "net.ltgt.apt-eclipse" version "0.21"
 }
 
-
-
 version "0.1"
 group "aws.lambda.micronaut.workshop"
 
@@ -15,8 +13,7 @@ repositories {
 }
 
 configurations {
-    // for dependencies that are needed for development only
-    developmentOnly 
+    developmentOnly
 }
 
 dependencies {
@@ -30,7 +27,6 @@ dependencies {
     implementation "io.micronaut:micronaut-inject"
     implementation "io.micronaut:micronaut-validation"
     implementation "io.micronaut:micronaut-runtime"
-    implementation "org.apache.logging.log4j:log4j-core:2.12.1"
     implementation("io.micronaut.aws:micronaut-function-aws-custom-runtime") {
         exclude group: "com.fasterxml.jackson.module", module: "jackson-module-afterburner"
     }
@@ -38,8 +34,7 @@ dependencies {
         exclude group: "com.fasterxml.jackson.module", module: "jackson-module-afterburner"
     }
     implementation "io.micronaut:micronaut-http-server-netty"
-    runtimeOnly "org.apache.logging.log4j:log4j-api:2.12.1"
-    runtimeOnly "org.apache.logging.log4j:log4j-slf4j-impl:2.12.1"
+    runtimeOnly "ch.qos.logback:logback-classic:1.2.3"
     testAnnotationProcessor platform("io.micronaut:micronaut-bom:$micronautVersion")
     testAnnotationProcessor "io.micronaut:micronaut-inject-java"
     testImplementation platform("io.micronaut:micronaut-bom:$micronautVersion")
@@ -51,7 +46,7 @@ dependencies {
 test.classpath += configurations.developmentOnly
 
 mainClassName = "aws.lambda.micronaut.workshop.Application"
-// use JUnit 5 platform
+
 test {
     useJUnitPlatform()
 }
