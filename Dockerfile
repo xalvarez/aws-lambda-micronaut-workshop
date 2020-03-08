@@ -1,4 +1,4 @@
-FROM gradle:5.4.1-jdk-alpine as builder
+FROM gradle:5.3.1-jdk-alpine as builder
 COPY --chown=gradle:gradle . /home/application
 WORKDIR /home/application
 RUN gradle build --no-daemon
