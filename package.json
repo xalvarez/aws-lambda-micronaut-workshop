@@ -6,6 +6,6 @@
     "url": "git@github.com:xalvarez/aws-lambda-micronaut-workshop.git"
   },
   "devDependencies": {
-    "serverless": "^1.65.0"
+    "serverless": "^1.66.0"
   }
 }
