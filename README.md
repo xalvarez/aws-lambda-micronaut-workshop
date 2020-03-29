@@ -10,6 +10,6 @@ The Lambda implements the following REST endpoints:
 
 * `/ping`, which returns an example response body
 * `/hello-github`, which uses GitHub's GraphQL API to retrieve a GitHub user's
-    username and respond "Hello <username>!"
+    username and respond `"Hello <username>!"`
 
 This material is part of a workshop and an blog entry.
