@@ -1,10 +1,12 @@
 package aws.lambda.micronaut.workshop.github;
 
 import io.micronaut.core.annotation.Introspected;
+import lombok.Builder;
 import lombok.Data;
 
 @Data
 @Introspected
+@Builder
 public class GitHubResponse {
 
     private GitHubData data;
@@ -14,12 +16,14 @@ public class GitHubResponse {
     }
 
     @Data
-    private static class GitHubData {
+    @Builder
+    static class GitHubData {
         private Viewer viewer;
     }
 
     @Data
-    private static class Viewer {
+    @Builder
+    static class Viewer {
         private String login;
     }
 }
