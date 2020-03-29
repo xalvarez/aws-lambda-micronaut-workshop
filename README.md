@@ -1,48 +1,15 @@
-# Micronaut + GraalVM Native + AWS Lambda Custom Runtime 
+# AWS Lambda Micronaut Workshop
 
-This example demonstrates how to use Micronaut AWS API Gateway Proxy support and GraalVM to construct a custom runtime that runs native images or Lambda.
+This project contains an AWS Lambda featuring
+[Micronaut](https://micronaut.io/),
+[GraalVM](https://www.graalvm.org/),
+[Serverless](https://serverless.com/) and
+[GitHub's GraphQL API](https://developer.github.com/v4/).
 
-The `Dockerfile` contains the build to build the native image and it can be built with:
+The Lambda implements the following REST endpoints:
 
-```bash
-$ docker build . -t aws-lambda-micronaut-workshop
-$ mkdir -p build
-$ docker run --rm --entrypoint cat aws-lambda-micronaut-workshop  /home/application/function.zip > build/function.zip
-```
+* `/ping`, which returns an example response body
+* `/hello-github`, which uses GitHub's GraphQL API to retrieve a GitHub user's
+    username and respond "Hello <username>!"
 
-Which will add the function deployment ZIP file to `build/function.zip`. You can run function locally using [SAM](https://github.com/awslabs/aws-sam-cli/)
-
-```bash
-$ docker build . -t aws-lambda-micronaut-workshop
-$ ./sam-local.sh
-$ curl http://localhost:3000/ping
-```
-
-Or you can deploy it to AWS via the console or CLI:
-
-```bash
-aws lambda create-function --function-name aws-lambda-micronaut-workshop \
---zip-file fileb://build/function.zip --handler function.handler --runtime provided \
---role ARN_OF_LAMBDA_ROLE
-```
-
-To create role for AWS Lambda, use following code:
-```bash
-```
-
-The function can be invoked by sending an API Gateway Proxy request. For example:
-
-```bash
-aws lambda invoke --function-name aws-lambda-micronaut-workshop --payload '{"resource": "/{proxy+}", "path": "/ping", "httpMethod": "GET"}' build/response.txt
-cat build/response.txt
-```
-
-and response should be something like:
-
-```json
-{"statusCode":200,"multiValueHeaders":{},"body":"{\"pong\":true, \"graal\": true}","isBase64Encoded":false}
-```
-
-Example controller responding with /ping are included in template.
-
-You should replace the `/ping` path entry with the URI the controller endpoint you wish to invoke.
+This material is part of a workshop and an blog entry.
