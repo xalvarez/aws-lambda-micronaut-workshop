@@ -12,4 +12,4 @@ The Lambda implements the following REST endpoints:
 * `/hello-github`, which uses GitHub's GraphQL API to retrieve a GitHub user's
     username and respond `"Hello <username>!"`
 
-This material is part of a workshop and an blog entry.
+This material is part of a workshop and a blog entry.
