@@ -2,7 +2,5 @@ micronaut:
   application:
     name: aws-lambda-micronaut-workshop
 
-github:
-  token: ${GITHUB_TOKEN}
-  apiUrl: https://api.github.com/graphql
-  userAgent: aws-lambda-micronaut-workshop
+restCountries:
+  apiUrl: https://restcountries.eu/rest/v2

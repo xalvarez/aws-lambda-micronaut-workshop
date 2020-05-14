@@ -1,23 +1,25 @@
 package aws.lambda.micronaut.workshop;
 
-import aws.lambda.micronaut.workshop.github.GitHubService;
+import aws.lambda.micronaut.workshop.restcountries.RestCountriesService;
 import io.micronaut.http.annotation.Controller;
 import io.micronaut.http.annotation.Get;
+import io.micronaut.http.annotation.PathVariable;
 import javax.inject.Inject;
+import javax.validation.constraints.NotBlank;
 
 @Controller("/")
 public class ExampleController {
 
-    @Inject
-    public GitHubService gitHubService;
+  @Inject
+  public RestCountriesService restCountriesService;
 
-    @Get("/ping")
-    public String index() {
-        return "{\"pong\":true, \"graal\": true}";
-    }
+  @Get("/ping")
+  public String index() {
+    return "{\"pong\":true, \"graal\": true}";
+  }
 
-    @Get("/hello-github")
-    public String helloGitHub() {
-        return "{\"greeting\": \"Hello " + gitHubService.getUsername() + "!\"}";
-    }
+  @Get("/capital/{country}")
+  public String getCapital(@PathVariable @NotBlank String country) {
+    return "{\"capital\": \"" + restCountriesService.getCapital(country) + "\"}";
+  }
 }
