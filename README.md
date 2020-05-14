@@ -9,8 +9,7 @@ This project contains an AWS Lambda featuring
 The Lambda implements the following REST endpoints:
 
 * `/ping`, which returns an example response body
-* `/hello-github`, which uses GitHub's GraphQL API to retrieve a GitHub user's
-    username and respond `"Hello <username>!"`
+* `/capital/{country}`, which uses the REST Countries API to retrieve a country's capital
 
 This material is part of a workshop and a blog entry.
 
