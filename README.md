@@ -2,9 +2,8 @@
 
 This project contains an AWS Lambda featuring
 [Micronaut](https://micronaut.io/),
-[GraalVM](https://www.graalvm.org/),
-[Serverless](https://serverless.com/) and
-[GitHub's GraphQL API](https://developer.github.com/v4/).
+[GraalVM](https://www.graalvm.org/) and
+[Serverless](https://serverless.com/).
 
 The Lambda implements the following REST endpoints:
 
