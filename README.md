@@ -25,4 +25,4 @@ The application can be built and deployed as follows:
 As a result, an API Gateway will be created containing an endpoint which allows to call our Lambda,
 e.g.:
 
-    curl https://abcde.execute-api.eu-central-1.amazonaws.com/dev/hello-github
+    curl https://abcde.execute-api.eu-central-1.amazonaws.com/dev/capital/germany
