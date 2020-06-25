@@ -4,6 +4,8 @@ import static io.micronaut.http.HttpStatus.NOT_FOUND;
 
 import io.micronaut.context.annotation.Prototype;
 import io.micronaut.http.exceptions.HttpStatusException;
+import java.util.List;
+import java.util.Optional;
 import javax.inject.Inject;
 
 @Prototype
@@ -14,11 +16,10 @@ public class RestCountriesService {
 
   public String getCapital(String country) {
 
-    if (restCountriesClient.fetchCountry(country) == null) {
-      throw badRequestException(country);
-    }
+    var countries = Optional.ofNullable(restCountriesClient.fetchCountry(country))
+        .orElse(List.of());
 
-    return restCountriesClient.fetchCountry(country)
+    return countries
         .stream()
         .findFirst()
         .map(RestCountriesResponse::getCapital)
