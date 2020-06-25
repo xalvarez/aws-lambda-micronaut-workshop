@@ -12,7 +12,7 @@ import io.micronaut.test.annotation.MicronautTest;
 import org.junit.jupiter.api.Test;
 
 @MicronautTest
-public class ExampleControllerRestIntegrationTest extends AbstractRestIntegrationTest {
+public class CapitalControllerRestIntegrationTest extends AbstractRestIntegrationTest {
 
     @Test
     public void shouldReplyPongToPing() {
