@@ -8,7 +8,7 @@ import javax.inject.Inject;
 import javax.validation.constraints.NotBlank;
 
 @Controller("/")
-public class ExampleController {
+public class CapitalController {
 
   @Inject
   public RestCountriesService restCountriesService;
